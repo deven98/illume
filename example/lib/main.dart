@@ -100,7 +100,10 @@ class FlappyWidget extends GameObject {
   }
 
   @override
-  void onScreenSizeChange(Vector2 size) {}
+  void onScreenSizeChange(Vector2 size) {
+    // This is a quick demo but you really should shift your positions in a
+    // real world app or at least lock orientation.
+  }
 
   @override
   void update(Duration delta) {
@@ -148,7 +151,10 @@ class Wall extends GameObject {
   }
 
   @override
-  void onScreenSizeChange(Vector2 size) {}
+  void onScreenSizeChange(Vector2 size) {
+    // This is a quick demo but you really should shift your positions in a
+    // real world app or at least lock orientation.
+  }
 
   @override
   void update(Duration delta) {
