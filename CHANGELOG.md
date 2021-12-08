@@ -1,3 +1,5 @@
-## 0.0.1
+## 0.1.0 [08/12/2021]
 
-* TODO: Describe initial release.
+Initial release
+
+Contains game objects and collisions
