@@ -1,6 +1,6 @@
 name: illume
 description: A Widget-based Game Engine for Flutter
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/deven98/illume
 
 environment:

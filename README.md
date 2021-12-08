@@ -5,9 +5,9 @@
 Illume is a simple Flutter game engine which uses widgets to create game objects instead of sprites 
 in normal game engines. This allows the app and game part to be quite integrated and use a lot of 
 common components without needing graphics work to create sprites and backgrounds (which was honestly 
-my main motivation, since I don't know anything about graphics design). It's also quite easy to create 
-and manage the game state as shown in the features ahead. A lot of functionality still be be implemented 
-including physics - only normal box-based collision is currently implemented.
+my main motivation, since I don't know anything about graphic design). It's also quite easy to create 
+and manage the game state as shown in the features ahead. A lot of functionality still needs to be 
+implemented including physics - only normal box-based collision is currently implemented.
 
 Some parts were inspired by other game engines, primarily [Flame](https://github.com/flame-engine/flame).
 
