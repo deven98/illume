@@ -83,6 +83,7 @@ class _IllumeState extends State<Illume> {
     for (var e in widget.illumeController.gameObjects) {
       e.gameSize = Vector2(size.dx, size.dy);
       if (!e.initialised) {
+        e.illumeController = widget.illumeController;
         e.init();
         e.initialised = true;
       }

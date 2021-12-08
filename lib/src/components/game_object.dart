@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math.dart';
 import 'package:illume/src/extensions.dart';
 
+import '../illume_controller.dart';
 import 'collision.dart';
 
 enum GameObjectAlignment {
@@ -17,6 +18,7 @@ abstract class GameObject {
   bool collidable = true;
   GameObjectAlignment alignment = GameObjectAlignment.center;
   bool initialised = false;
+  late IllumeController illumeController;
 
   void init();
 

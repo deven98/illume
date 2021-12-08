@@ -32,10 +32,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   IllumeController gameController = IllumeController();
 
+  FlappyWidget flappyWidget = FlappyWidget();
+
   @override
   void initState() {
     super.initState();
     gameController.startGame();
+    gameController.gameObjects.add(flappyWidget);
   }
 
   @override
@@ -47,8 +50,14 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Stack(
         children: [
           gradient,
-          Illume(
-            illumeController: gameController,
+          GestureDetector(
+            child: Illume(
+              illumeController: gameController,
+            ),
+            onTap: () {
+              print('tap');
+              flappyWidget.jump();
+            },
           ),
         ],
       ),
@@ -66,25 +75,15 @@ class _MyHomePageState extends State<MyHomePage> {
   );
 }
 
-class DemoObject extends GameObject {
-  int dx;
-
-  DemoObject(this.dx);
+class FlappyWidget extends GameObject {
+  var velocity = 0.0;
+  var acceleration = 0.05;
 
   @override
   Widget build(BuildContext context) {
-    return TweenAnimationBuilder<Color?>(
-      duration: Duration(seconds: 1),
-      tween: ColorTween(begin: Colors.red, end: Colors.blue),
-      builder: (context, color, wid) {
-        return Container(
-          decoration: BoxDecoration(
-            color: color,
-            shape: BoxShape.circle,
-          ),
-          child: SizedBox.expand(),
-        );
-      },
+    return Container(
+      color: Colors.blue,
+      child: const Text('Demo'),
     );
   }
 
@@ -92,12 +91,12 @@ class DemoObject extends GameObject {
   void init() {
     size = Vector2.all(50);
     alignment = GameObjectAlignment.center;
-    position = (gameSize / 2) + Vector2(dx.toDouble(), 0);
+    position = (gameSize / 2);
   }
 
   @override
   void onCollision(List<Collision> collisions) {
-    // TODO: implement onCollision
+    illumeController.stopGame();
   }
 
   @override
@@ -105,9 +104,11 @@ class DemoObject extends GameObject {
 
   @override
   void update(Duration delta) {
-    position[1]--;
-    if (position[1] < 0) {
-      position[1] = 500;
-    }
+    position += Vector2(0, velocity);
+    velocity = velocity + acceleration;
+  }
+
+  void jump() {
+    velocity = -10;
   }
 }
