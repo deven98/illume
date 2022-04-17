@@ -5,11 +5,16 @@ import 'package:illume/src/extensions.dart';
 
 import 'components/collision.dart';
 
+/// The controller for the game which contains the game objects and allows
+/// controlling the start/stop/pause mechanism for the game
 class IllumeController extends ValueNotifier<List<GameObject>> {
+  /// Game objects present in the game
   late List<GameObject> gameObjects;
 
+  /// Create default [IllumeController]
   factory IllumeController() => IllumeController._([]);
 
+  /// Create [IllumeController] from game objects
   factory IllumeController.fromObjects(List<GameObject> objects) =>
       IllumeController._(objects);
 

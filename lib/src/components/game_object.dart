@@ -5,11 +5,15 @@ import 'package:illume/src/extensions.dart';
 import '../illume_controller.dart';
 import 'collision.dart';
 
+/// Defines the alignment of the [GameObject]
+/// If set to [GameObjectAlignment.topLeft], the position of the object is calculated wrt to the top left corner
+/// If set to [GameObjectAlignment.center], the position of the object is calculated wrt to the center
 enum GameObjectAlignment {
   center,
   topLeft,
 }
 
+/// Class defining a game object for Illume
 abstract class GameObject {
   Vector2 position = Vector2.zero();
   Vector2 size = Vector2.zero();

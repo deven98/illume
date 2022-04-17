@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:illume/illume.dart';
-import 'package:illume/src/components/game_object.dart';
-import 'package:illume/src/illume_controller.dart';
 import 'package:illume/src/extensions.dart';
 
+/// The Widget responsible for creating an Illume game
+/// The [illumeController] is responsible for holding the game objects
 class Illume extends StatefulWidget {
   final IllumeController illumeController;
 
