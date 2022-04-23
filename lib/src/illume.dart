@@ -56,7 +56,7 @@ class _IllumeState extends State<Illume> {
   }
 
   Widget getObjectWidget(GameObject e) {
-    if (widgetCache[e] != null) {
+    if (widgetCache[e] != null && !e.rebuildWidgetIfNeeded) {
       return widgetCache[e]!;
     }
 
@@ -68,6 +68,10 @@ class _IllumeState extends State<Illume> {
           .where((e) => !widget.illumeController.gameObjects.contains(e))
           .toList();
       removeList.forEach(widgetCache.remove);
+    }
+
+    if (e.rebuildWidgetIfNeeded) {
+      e.rebuildWidgetIfNeeded = false;
     }
 
     return newWidget;

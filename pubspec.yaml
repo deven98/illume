@@ -1,6 +1,6 @@
 name: illume
 description: A Widget-based Game Engine for Flutter - Create games directly with Widgets as a part of your app
-version: 0.1.2
+version: 0.2.0
 homepage: https://github.com/deven98/illume
 
 environment:

@@ -22,6 +22,7 @@ abstract class GameObject {
   bool collidable = true;
   GameObjectAlignment alignment = GameObjectAlignment.center;
   bool initialised = false;
+  bool rebuildWidgetIfNeeded = false;
   late IllumeController illumeController;
 
   void init();
@@ -43,5 +44,10 @@ abstract class GameObject {
         return Rect.fromPoints(
             position.toOffset, position.toOffset + size.toOffset);
     }
+  }
+
+  void rebuildWidget() {
+    rebuildWidgetIfNeeded = true;
+    illumeController.rebuildWidgetsWhereNeeded();
   }
 }

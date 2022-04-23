@@ -59,6 +59,10 @@ class IllumeController extends ValueNotifier<List<GameObject>> {
     _ticker.stop();
   }
 
+  void rebuildWidgetsWhereNeeded() {
+    notifyListeners();
+  }
+
   @override
   void dispose() {
     super.dispose();
