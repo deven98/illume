@@ -1,3 +1,7 @@
+## 0.2.1
+
+* Added initialization check when rebuilding
+
 ## 0.2.0 
 
 * Added option to rebuild Widget

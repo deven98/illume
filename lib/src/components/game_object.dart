@@ -48,6 +48,8 @@ abstract class GameObject {
 
   void rebuildWidget() {
     rebuildWidgetIfNeeded = true;
-    illumeController.rebuildWidgetsWhereNeeded();
+    if (initialised) {
+      illumeController.rebuildWidgetsWhereNeeded();
+    }
   }
 }
